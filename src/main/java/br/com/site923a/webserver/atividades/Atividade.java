@@ -53,8 +53,8 @@ public class Atividade {
         return descricao;
     }
 
-    public ZonedDateTime getDataEntrega() {
-        return dataEntrega.atZone(ZoneId.of("America/Sao_Paulo"));
+    public LocalDateTime getDataEntrega() {
+        return dataEntrega;
     }
 
     public URL getLinkClassroom() {
