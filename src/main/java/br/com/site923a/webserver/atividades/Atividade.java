@@ -19,8 +19,9 @@ public class Atividade {
     private String descricao;
     private LocalDateTime dataEntrega;
     private URL linkClassroom;
+    private String cor;
 
-    public Atividade(String materia, String titulo, String descricao, LocalDateTime dataEntrega, URL linkClassroom) {
+    public Atividade(String materia, String titulo, String descricao, LocalDateTime dataEntrega, URL linkClassroom, String cor) {
         if (materia.isEmpty() || titulo.isEmpty() || descricao.isEmpty()) {
             throw new MalformedParametersException("Parâmetros não podem ser vazios!");
         }
@@ -33,6 +34,7 @@ public class Atividade {
         if (linkClassroom != null) {
             this.linkClassroom = linkClassroom;
         }
+        this.cor = cor;
     }
 
     public String getId() {
@@ -57,5 +59,9 @@ public class Atividade {
 
     public URL getLinkClassroom() {
         return linkClassroom;
+    }
+
+    public String getCor() {
+        return cor;
     }
 }

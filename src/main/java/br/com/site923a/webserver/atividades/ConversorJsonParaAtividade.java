@@ -32,16 +32,17 @@ public class ConversorJsonParaAtividade {
         Atividade atividade = new Atividade(
             json.get("materia"), 
             json.get("titulo"), 
-            json.get("descricao"), 
+            json.get("descricao"),
             dataEntrega, 
-            linkClassroom
+            linkClassroom,
+            json.get("cor")
         );
         return atividade;
     }
 
     private void checarPorParametrosObrigatorios() throws Exception {
         List<String> parametrosObrigatorio = 
-            Arrays.asList("materia", "titulo", "descricao", "dataEntrega");
+            Arrays.asList("materia", "titulo", "descricao", "dataEntrega", "cor");
         for (String p : parametrosObrigatorio) {
             if (!json.containsKey(p)) {
                 throw new Exception("Falta parâmetro: " + p);
